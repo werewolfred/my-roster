@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NFL Fantasy Football roster</title>
+    <!--add bootstrap link and css link  -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="my-team">
+                    <h3>My Roster</h3>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="player-roster">
+                    <h3> Player Roster</h3>
+
+
+                    <div class="player-card">
+                        <!-- <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/"> -->
+                        <form onsubmit="app.controllers.nflController.getPlayersByPosition(event)">
+                            Position: <input type="text" name="playersByPosition" placeholder="Position">
+                            <button id="position" type="submit">Position</button>
+                        </form>
+                        <form onsubmit="app.controllers.nflController.getPlayersByTeam(event)">
+                            Team: <input type="text" name="playersByTeam" placeholder="Team">
+                            <button id="team" type="submit">Team</button>
+                        </form>
+                        <form onsubmit="app.controllers.nflController.getPlayersByName(event)">
+                            Name: <input type="text" name="playersByName" placeholder="Full Name">
+                            <button id="name" type="submit">Name</button>
+                        </form>
+                        <div id="player-output" class="row"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="service.js"></script>
+    <script src="controller.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
